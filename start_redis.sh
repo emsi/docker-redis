@@ -1,6 +1,7 @@
 #!/bin/sh
 
-HOST="`hostname`"
+IP=`ifconfig eth0 | grep 'inet' | awk '{print $2}' | cut -f2 -d:`
+HOST=`nslookup ${IP} |  sed -e '/in-addr.arpa/!d' -e 's/^.*name = \(.*\)\..*$/\1/'`
 
 mkdir -p /data/${HOST}
 
