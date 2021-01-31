@@ -10,4 +10,4 @@ fi
 
 
 docker-compose up -d --scale node=6
-docker run -ti --rm --network docker-redis_redis -e NODES="`docker-compose  ps | grep node  | cut -f1 -d' '`" -v "$(pwd)/${ME}:/${ME}" redis:6.0-alpine /bin/sh "/${ME}"
+docker-compose run --rm -e NODES="`docker-compose  ps | grep node  | cut -f1 -d' '`" -v "$(pwd)/${ME}:/${ME}" node /bin/sh "/${ME}"
