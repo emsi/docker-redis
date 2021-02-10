@@ -1,7 +1,7 @@
 # docker-redis
-Docker files to setup redis cluster
+Docker files to setup redis cluster.
 
-Make sure to connect all the clients to redis network or modify compose file to use nost networking.
+Make sure to connect all of the clients to redis network or modify compose file to use host networking.
 
 ## Creating cluster
 
@@ -74,7 +74,7 @@ S: 96164dfb51d2a2724aa2dfa7332d7cb3d9e2c66f 192.168.80.2:6379
 
 ## Managin cluster
 
-There are two aspects of managinc the cluster. First it's instance management which it's done by docker taking down or bringing up containers. Second it's redis cluster management which is adding or removeing nodes from cluster.
+There are two aspects of managinc the cluster. First it's instance management which is done by docker taking down or bringing up containers. Second it's redis cluster management which is adding or removeing nodes from cluster.
 
 As for changing number of instances it's as simple as:
 `docker-compose up -d --scale node=X`
