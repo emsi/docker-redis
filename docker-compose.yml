@@ -9,38 +9,9 @@ services:
       - ./redis/redis.conf:/etc/redis.conf
       - ./start_redis.sh:/start_redis.sh
       - data:/data
+    init: true
     command: sh /start_redis.sh
 
-#  redis-0:
-#    image: redis:6.0-alpine
-#    hostname: redis-0
-#    container_name: redis-0
-#    networks: 
-#      - redis
-#    volumes:
-#      - ./redis/redis.conf:/etc/redis.conf
-#    command: redis-server /etc/redis.conf
-#
-#  redis-1:
-#    image: redis:6.0-alpine
-#    hostname: redis-1
-#    container_name: redis-1
-#    networks: 
-#      - redis
-#    volumes:
-#      - ./redis/redis.conf:/etc/redis.conf
-#    command: redis-server /etc/redis.conf
-#
-#  redis-2:
-#    image: redis:6.0-alpine
-#    hostname: redis-2
-#    container_name: redis-2
-#    networks: 
-#      - redis
-#    volumes:
-#      - ./redis/redis.conf:/etc/redis.conf
-#    command: redis-server /etc/redis.conf
-#
 
 networks:
   redis:
